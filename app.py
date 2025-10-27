@@ -82,7 +82,8 @@ def predecir_chapa_ponderada(df, maquinaria_in, graso_in, humedad_in, k=10, peso
 with engine.begin() as conn:
     conn.execute(text("""
         CREATE TABLE IF NOT EXISTS moliendas (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id SERIAL PRIMARY KEY,
+
             fecha TEXT,
             variedad TEXT,
             contenido_graso REAL,
